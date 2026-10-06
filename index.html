@@ -5,6 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CHEERS · Nanyang Technological University</title>
 <meta name="description" content="CHEERS (Climate and Hydrology for Earth and Ecosystem Resilience and Sustainability) is a research group led by Yanyan Cheng at the Asian School of the Environment, Nanyang Technological University.">
+<script>
+/* ==================================================================
+ * GROUP MEMBERS — edit this list to update the People section.
+ * People appear in the order listed.
+ *
+ *   name      Full name as displayed.
+ *   position  Shown under the name, e.g. "Research Fellow".
+ *   icon      Optional. Path to a square photo, relative to this page
+ *             (e.g. "people/hongyi-xie.jpg"), or a full https:// URL.
+ *             Leave it out to show the person's initials instead.
+ *   initials  Optional. Overrides the automatic initials
+ *             (first letter of the first and last word of the name).
+ * ================================================================== */
+var GROUP_MEMBERS = [
+  { name: "Yanyan Cheng", position: "Principal Investigator" },
+  { name: "Hongyi Xie",   position: "Research Fellow" },
+  { name: "Wenchao Chu",  position: "Research Fellow" },
+  { name: "Yaomin Wang",  position: "PhD Student" },
+  { name: "Shu Wen Puah", position: "PhD Student" }
+];
+</script>
 <style>
 :root{
   --sand:#F6F1E7;
@@ -401,7 +422,7 @@ h2{font-family:var(--disp);font-size:2.05rem;font-weight:700;color:var(--ink);ma
         </p>
         <h2>Group members</h2>
       </div>
-      <!-- Filled from members.js (next to this file) — edit the list there. -->
+      <!-- Filled from GROUP_MEMBERS at the top of this file — edit the list there. -->
       <ul class="people-row" id="members"></ul>
     </div>
   </section>
@@ -468,7 +489,6 @@ h2{font-family:var(--disp);font-size:2.05rem;font-weight:700;color:var(--ink);ma
   </div>
 </footer>
 
-<script src="members.js"></script>
 <script>
 (function(){
   var t=document.querySelector('.nav-toggle'),m=document.getElementById('nav-menu');
@@ -486,16 +506,15 @@ h2{font-family:var(--disp);font-size:2.05rem;font-weight:700;color:var(--ink);ma
   });
 })();
 
-/* group members: rendered from members.js */
+/* group members: rendered from GROUP_MEMBERS (top of this file) */
 (function(){
-  var list=document.getElementById('members'),people=window.CHEERS_MEMBERS;
+  var list=document.getElementById('members'),people=window.GROUP_MEMBERS;
   if(!list||!people)return;
-  var s=document.querySelector('script[src$="members.js"]'),base=s?s.src:location.href;
   function el(tag,cls,text){var e=document.createElement(tag);if(cls)e.className=cls;if(text)e.textContent=text;return e}
   people.forEach(function(p,i){
     var w=p.name.trim().split(/\s+/),li=el('li','person'),av=el('div','avatar av-'+'abcd'.charAt(i%4));
     av.setAttribute('aria-hidden','true');
-    if(p.icon){var img=el('img');img.src=new URL(p.icon,base).href;img.alt='';av.appendChild(img)}
+    if(p.icon){var img=el('img');img.src=p.icon;img.alt='';av.appendChild(img)}
     else av.textContent=p.initials||(w[0][0]+(w.length>1?w[w.length-1][0]:'')).toUpperCase();
     li.appendChild(av);
     li.appendChild(el('p','name',p.name));
