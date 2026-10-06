@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CHEERS · NTU — Demo 3 “Organic”</title>
-<meta name="description" content="Design demo 3 of 4 (“Organic”) for the homepage of CHEERS — Climate and Hydrology for Earth and Ecosystem Resilience and Sustainability, Nanyang Technological University.">
+<title>CHEERS · Nanyang Technological University</title>
+<meta name="description" content="CHEERS (Climate and Hydrology for Earth and Ecosystem Resilience and Sustainability) is a research group led by Yanyan Cheng at the Asian School of the Environment, Nanyang Technological University.">
 <style>
 :root{
   --sand:#F6F1E7;
@@ -168,14 +168,6 @@ h2{font-family:var(--disp);font-size:2.05rem;font-weight:700;color:var(--ink);ma
 .site-foot address{font-style:normal;margin-top:.8rem}
 .smallprint{border-top:1px solid rgba(255,253,246,.16);padding-block:1rem}
 .smallprint p{font-size:.77rem;color:rgba(255,253,246,.55)}
-
-/* demo switcher */
-.demo-switch{position:fixed;right:1rem;bottom:1rem;z-index:55;display:inline-flex;align-items:center;gap:.6rem;
-  background:var(--moss);color:var(--cream);font-size:.74rem;
-  padding:.52rem .9rem;border-radius:999px;box-shadow:0 6px 18px rgba(34,57,42,.35)}
-.demo-switch a{color:var(--cream);text-decoration:none;font-weight:600;opacity:.92}
-.demo-switch a:hover{opacity:1;text-decoration:underline}
-.demo-switch span{opacity:.5}
 
 @media (max-width:920px){
   .hero .wrap{grid-template-columns:1fr;gap:2rem}
@@ -409,7 +401,7 @@ h2{font-family:var(--disp);font-size:2.05rem;font-weight:700;color:var(--ink);ma
         </p>
         <h2>Group members</h2>
       </div>
-      <!-- Filled from ../members.js — edit the list there. -->
+      <!-- Filled from members.js (next to this file) — edit the list there. -->
       <ul class="people-row" id="members"></ul>
     </div>
   </section>
@@ -476,13 +468,7 @@ h2{font-family:var(--disp);font-size:2.05rem;font-weight:700;color:var(--ink);ma
   </div>
 </footer>
 
-<nav class="demo-switch" aria-label="Demo navigation">
-  <a href="../index.html">← All demos</a>
-  <span aria-hidden="true">·</span>
-  <a href="../4-systems/index.html">Next design →</a>
-</nav>
-
-<script src="../members.js"></script>
+<script src="members.js"></script>
 <script>
 (function(){
   var t=document.querySelector('.nav-toggle'),m=document.getElementById('nav-menu');
@@ -500,7 +486,7 @@ h2{font-family:var(--disp);font-size:2.05rem;font-weight:700;color:var(--ink);ma
   });
 })();
 
-/* group members: rendered from ../members.js */
+/* group members: rendered from members.js */
 (function(){
   var list=document.getElementById('members'),people=window.CHEERS_MEMBERS;
   if(!list||!people)return;
